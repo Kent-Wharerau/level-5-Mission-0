@@ -26,7 +26,7 @@ To view the project in your browser using the Live Server in VS Code:
 
 ---
 
-## Mobile Optimization
+## Mobile Optimisation
 
 - Nav links are hidden on mobile (`max-width: 768px`) and a hamburger icon is displayed.
 - Flexbox layout ensures hero and card sections stack vertically (in a column) and are center-aligned.
