@@ -1,149 +1,173 @@
+/* Apply to all elements: ensures padding and border don't affect total size */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: #ddf1f3;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;          
+  padding: 0;         
+}
+
+/* Styling for the whole page */
+body {
+  font-family: Arial, sans-serif; 
+  color: #ddf1f3;                 
+}
+
+/* Header area (top section of the page) */
+.header {
+  display: flex;                  
+  justify-content: space-between;
+  align-items: center;           
+  background: #ffffff;           
+}
+
+/* Logo styling */
+.logo {
+  width: 5vw;    
+  height: 5vh;   
+  margin: 2px;   
+  font-weight: bold; 
+}
+
+/* Navigation links list */
+.nav-links {
+  list-style: none; 
+  display: flex;    
+  gap: 20px;        
+  margin: 15px;     
+}
+
+/* Individual link styling */
+.nav-links li a {
+  text-decoration: none; 
+  font-weight: bold;     
+  color: #e71802;       
+}
+
+/* Hamburger menu icon (for mobile view) */
+.hamburger {
+  display: none;   
+  font-size: 24px; 
+  cursor: pointer; 
+}
+
+/* Hero section (big intro area) */
+.hero {
+  background: #143352;      
+  text-align: center;       
+  padding: 40px 20px;       
+}
+
+/* Hero heading */
+.hero h1 {
+  margin-bottom: 20px;      
+  font-size: 2em;           
+}
+
+/* Hero image styling */
+.hero img {
+  height: 40vh;             
+  width: 40vw;              
+  margin: 20px 0;           
+}
+
+/* Search bar and button area */
+.search-box {
+  display: flex;            
+  justify-content: center;  
+  gap: 10px;                
+  flex-wrap: wrap;          
+}
+
+/* Text input box */
+.search-box input {
+  padding: 10px;            
+  width: 250px;            
+}
+
+/* Search button */
+.search-box button {
+  padding: 10px 20px;       
+  background: white;        
+  color: black;             
+  border: none;             
+  cursor: pointer;          
+}
+
+/* Section for cards (can be used for featured content) */
+.cards {
+  display: flex;            
+  justify-content: space-around; 
+  flex-wrap: wrap;          
+  padding: 90px 40px;       
+  background: #24587a;      
+  height: 37.7vh;           
+  gap: 20px;                
+}
+
+/* Individual card styling */
+.card {
+  flex: 1 1 250px;         
+  max-width: 600px;         
+  margin: 20px;           
+  text-align: center;       
+  background: #24587a;      
+  color: #ddf1f3;           
+  padding: 20px;            
+  height: 20vh;            
+}
+
+/* Image inside the card */
+.card img {
+  max-width: 100%;          
+  height: 300px;           
+  margin-bottom: 15px;      
+}
+
+/* Responsive styles for screens smaller than 768px (mobile) */
+@media (max-width: 768px) {
+
+  /* Make logo responsive */
   .logo {
-    width: 5vw;
-    height: 5vh;
-    margin: 2px;
-    font-weight: bold;
+    max-width: 100%;
+    height: auto;
   }
-  
+
+  /* Hide the navigation links on small screens */
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 15px;
+    display: none;
   }
-  
-  .nav-links li a {
-    text-decoration: none;
-    font-weight: bold;
+
+  /* Show the hamburger icon on mobile */
+  .hamburger {
+    display: block;
     color: #e71802;
   }
-  
-  .hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .hero {
-    background: #143352;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .hero h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-  }
-  
+
+  /* Make the hero image take full width */
   .hero img {
-    height: 40vh;
-    width: 40vw;
-    margin: 20px 0;
+    min-width: 100%;
+    height: auto;
   }
-  
-  .search-box {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .search-box input {
-    padding: 10px;
-    width: 250px;
-  }
-  
-  .search-box button {
-    padding: 10px 20px;
-    background: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-  }
-  
+
+  /* Stack cards vertically */
   .cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 90px 40px;
-    background: #24587a;
-    height: 37.7vh;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
-  
-  .card {
-    flex: 1 1 250px;
-    max-width: 600px;
-    margin: 20px;
-    text-align: center;
-    background: #24587a;
-    color: #ddf1f3;
-    padding: 20px;
-    height: 20vh;
+
+  /* Stack search inputs and buttons */
+  .search-box {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .card img {
-    max-width: 100%;
-    height: 300px;
-    margin-bottom: 15px;
+
+   /* Make the search-box stretch wider on small screens */
+  .search-box input {
+    width: 80%;
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-  
-    .logo {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .nav-links {
-      display: none;
-    }
-  
-    .hamburger {
-      display: block;
-      color: #e71802;
-    }
-  
-    .hero img {
-      min-width: 100%;
-      height: auto;
-    }
-  
-    .cards {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
-    }
-  
-    .search-box {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .search-box input {
-      width: 80%;
-    }
-  
-    .search-box button {
-      width: 80%;
-    }
+
+  /* Make the button match the width of the input field */
+  .search-box button {
+    width: 80%;
   }
+}
